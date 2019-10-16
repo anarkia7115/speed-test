@@ -37,7 +37,7 @@ main()
       printf("sleeping %d of %d\n", slept, 10);
    }
 
-   printf("chunk size: %d", len(data));
+   printf("chunk size: %d", sizeof(data));
 
    free(data);
 
