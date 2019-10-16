@@ -19,8 +19,10 @@ main()
 
    if ((data = malloc(bytes_expected)) == NULL)
       err(EX_OSERR, "data malloc");
+   printf("chunk size: %d after malloc", sizeof(data));
 
    bytes_read = read(fd, data, bytes_expected);
+   printf("chunk size: %d after read", sizeof(data));
 
    if (bytes_read != bytes_expected) 
       err(EX_DATAERR, "Read only %d of %d bytes", 
