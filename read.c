@@ -11,7 +11,7 @@ main()
    int fd; 
    size_t bytes_read, bytes_expected = 100000000*sizeof(double); 
    double *data;
-   char *infile = "file.dat";
+   char *infile = "/mnt/data/alignment/hg38.fa.gz.bwt";
 
    if ((fd = open(infile,O_RDONLY)) < 0) 
       err(EX_NOINPUT, "%s", infile);
