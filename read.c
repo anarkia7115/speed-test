@@ -30,10 +30,10 @@ main()
    int slept = 0;
 
    int i;
-   for (i=0; i<=toSleep; i++) {
+   for (i=0; i<toSleep; i++) {
       sleep(1);
       slept++;
-      printf("sleeping %d of %d", slept, 10);
+      printf("sleeping %d of %d\n", slept, 10);
    }
 
    free(data);
