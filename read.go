@@ -42,7 +42,7 @@ func main() {
 		fmt.Printf("reading default file: %s\n", bwtPath)
 	}
 
-	fmt.Printf("print from %d to %d of %s\n", start, end, bwtPath)
+	fmt.Printf("read from %d to %d of %s\n", start, end, bwtPath)
 	b := make([]byte, end - start + 1)
 
 	// open file
@@ -52,8 +52,9 @@ func main() {
 	n, err := f.Read(b)
 	check(err)
 
-	fmt.Printf("[%d, %d] of bytes(%d):\n[%s]\n", 
-		start, end, n, b[start:end])
+	fmt.Println("memory load done!")
+	// fmt.Printf("[%d, %d] of bytes(%d):\n[%s]\n", 
+	// 	start, end, n, b[start:end])
 	f.Close()
 
 	var timeSlept int
@@ -63,6 +64,6 @@ func main() {
 		fmt.Printf("time countdown: %d of %d\n", 
 			timeSlept, sleepSec)
 	}
-
+	fmt.Printf("size of chunk: %d\n", n)
 
 }
