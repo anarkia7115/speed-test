@@ -26,6 +26,14 @@ main()
          bytes_read, bytes_expected);
 
    /* ... operate on data ... */
+   int toSleep = 10;
+   int slept = 0;
+
+   for (int i=0; i<=toSleep; i++) {
+      sleep(1);
+      slept++;
+      printf("sleeping %d of %d", slept, 10);
+   }
 
    free(data);
 
