@@ -1,0 +1,1 @@
+export BIGFILE="./read.go"
