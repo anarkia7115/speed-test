@@ -10,8 +10,9 @@ main()
 {
    int fd; 
    size_t bytes_read, bytes_expected = 100000000*sizeof(double); 
-   double *data;
-   char *infile = "/mnt/data/alignment/hg38.fa.gz.bwt";
+   char *data;
+   // char *infile = "/mnt/data/alignment/hg38.fa.gz.bwt";
+   char *infile = getenv("BIGFILE");
 
    if ((fd = open(infile,O_RDONLY)) < 0) 
       err(EX_NOINPUT, "%s", infile);
@@ -35,6 +36,8 @@ main()
       slept++;
       printf("sleeping %d of %d\n", slept, 10);
    }
+
+   printf("chunk size: %d", len(data));
 
    free(data);
 

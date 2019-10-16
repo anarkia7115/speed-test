@@ -38,8 +38,9 @@ func main() {
 		bwtPath = args[3]
 		fmt.Printf("reading file: %s\n", bwtPath)
 	} else {
-		bwtPath = "/mnt/data/alignment/hg38.fa.gz.bwt"
-		fmt.Printf("reading default file: %s\n", bwtPath)
+		// bwtPath = "/mnt/data/alignment/hg38.fa.gz.bwt"
+		bwtPath = os.Getenv("BIGFILE");
+		fmt.Printf("set input file using env: %s\n", bwtPath)
 	}
 
 	fmt.Printf("read from %d to %d of %s\n", start, end, bwtPath)
